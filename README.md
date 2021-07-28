@@ -10,20 +10,20 @@ This model is then compared to an Azure AutoML run.
 - This project uses a Bank Marketing Dataset from the [USI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
 - The dataset conatins personal details about clients such as age, job, marital status, education, etc among other attributes. 
 - This is a **_classification_** (2 class-classification) problem with the goal to predict whether or not a client will subscribe to a term deposit with the bank. 
-- The data is classified using the column label y in the dataset that contains binary values ('yes' and 'no')**.
+- The data is classified using the column label y in the dataset that contains binary values ('yes' and 'no').
 
 ### Project Workflow Steps
 ![Image of Pipeline Architecture](images/pipeline_architecture.png)
 
-### Solution Summary
-![Image of Project Experiments](Images/Experiments.png).
+### Solution Aproach
 - This project used two approaches to find the best possible model for classifying the given dataset:
-  - Scikit-Learn based logistic regression which used the HyperDrive for effective hyperparameter tuning
-  - Automated Machine Learning was used to build and choose the best model
+  1. Scikit-Learn based logistic regression using the HyperDrive for hyperparameter tuning
+  1. Automated Machine Learning was used to build and choose the best model
+- Both these approaches were extecuted using _Jupyter Notebook and the Azure ML SDK_.
  
-### Result Summary
-* The best performing model was a **_VotingEnsemble_** algorithm that was selected through AutoML with an accuracy of **0.91663**.
-* The Logistic Regression model whose hyperparameters were tuned using HyperDrive gave an accuracy of **0.9131**.
+### Results
+* The best performing model was a **_VotingEnsemble_** algorithm that was selected through AutoML with an accuracy of **0.9159**.
+* The Logistic Regression model whose hyperparameters were tuned using HyperDrive gave an accuracy of **0.9102**.
 
 ## Approaches
 - Two approaches were used in this project to classify the given data and come up with the best possible model:
