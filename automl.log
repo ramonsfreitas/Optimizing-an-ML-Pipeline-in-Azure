@@ -1,0 +1,14 @@
+2021-07-26 19:13:28.730 - INFO - 4387 - azureml.train.automl._local_managed_utils.is_docker_installed:354 - Docker is installed with Docker version 20.10.6+azure, build 370c28948e3c12dce3d1df60b6f184990618553f
+.
+2021-07-26 19:13:28.731 - INFO - 4387 - azureml.train.automl.automlconfig._start_execution:217 - Submitting remote.
+2021-07-26 20:03:13.797 - INFO - 4387 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-07-26 20:03:13.914 - INFO - 4387 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-07-26 20:03:13.943 - INFO - 4387 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-07-26 20:03:14.682 - INFO - 4387 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=738.86[ms]
+2021-07-26 20:03:14.753 - INFO - 4387 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=839.08[ms]
+2021-07-26 20:03:14.759 - INFO - 4387 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2021-07-26 20:03:24.785 - INFO - 4387 - azureml.automl.runtime.distributed.utilities.horovod_initialized:70 - Horovod not found in current environment. Distribution via Horovod will be disabled.
+2021-07-26 20:03:27.374 - INFO - 4387 - azureml.automl.runtime.featurization.data_transformer.__init__:172 - Feature sweeping enabled: False
+2021-07-26 20:03:27.382 - INFO - 4387 - azureml.automl.runtime.featurization.data_transformer.__init__:173 - Feature sweeping timeout: 86400
+2021-07-26 20:03:30.416 - INFO - 4387 - azureml.train.automl._model_download_utilities._log_activity:93 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=15656.48[ms]
+2021-07-26 20:03:30.437 - INFO - 4387 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=16639.73[ms]
