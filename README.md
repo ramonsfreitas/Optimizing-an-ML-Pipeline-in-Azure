@@ -13,7 +13,7 @@ This model is then compared to an Azure AutoML run.
 - The data is classified using the column label y in the dataset that contains binary values ('yes' and 'no')**.
 
 ### Project Workflow Steps
-![Image of Pipeline Architecture](Images/Project_Pipeline_Architecture.png)
+![Image of Pipeline Architecture](images/pipeline_architecture.png)
 
 ### Solution Summary
 ![Image of Project Experiments](Images/Experiments.png).
