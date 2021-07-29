@@ -15,7 +15,7 @@ This model is then compared to an Azure AutoML run.
 ### Project Workflow Steps
 ![Image of Pipeline Architecture](images/pipeline_architecture.png)
 
-### Solution Aproach
+### Solution Approach
 - This project used two approaches to find the best possible model for classifying the given dataset:
   1. Scikit-Learn based logistic regression using the HyperDrive for hyperparameter tuning
   1. Automated Machine Learning was used to build and choose the best model
@@ -36,7 +36,11 @@ In order to fed the hyperdrive package, clean the data was necessary using clean
 - The HyperDrive package is used to optimize tuning of hyperparameters by using the HyperDriveConfig() that takes in several configuration attributes:
   1. Estimator (`est`): An `SKLearn` estimator is used to begin the training and invoke the training script file.
   1. Parameter sampler (`hyperparameter_sampling `): A `RandomParameterSampling` sampler is used to randomly select values specified in the search space for the two parameters of Logistic Regression algorithm (--c and --max_iter). It is faster and supports early termination of low-performance runs. Random Sampling works with both discrete and continous search space unlike Grid Sampling. It also supports early termination policy unlike Bayesian Sampling. Hence Random Sampler helps in performing trial and error with values chosen over the search space and then refine the search space in subsequent runs to obtain best results.
-  1. Policy (`policy`): An early termination policy, `BanditPolicy`, is passed to ensure low performing runs are terminated and resources are not wasted. Early stopping helps in avoiding unnecessary usage of resources assigned to runs that performs poorly. This is ensured by terminating runs whose primary metric is not within the slack amount specified by the policy.
+  1. Policy (`policy`): An early termination policy, `BanditPolicy`, is passed to ensure low performing runs are terminated and resources are not wasted. Early stopping helps in avoiding unnecessary usage of resources assigned to runs that performs poorly. This is ensured by terminating runs whose primary metric is not within the slack amount specified by the policy. 
+  `BanditPolicy` is based on slack factor/slack amount and evaluation interval. Bandit ends runs when the primary metric isn't within the specified slack factor/slack amount of the most successful run. Configuration of Badit policy requires the follow parameters:
+      * slack_factor or slack_amount: the slack allowed with respect to the best performing training run. slack_factor specifies the allowable slack as a ratio. slack_amount specifies the allowable slack as an absolute amount, instead of a ratio.
+      * evaluation_interval: (optional) the frequency for applying the policy
+      * delay_evaluation: (optional) delays the first policy evaluation for a specified number of intervals
   1. Primary Metric (`primary_metric_name`): The primary metric for evaluating runs is specified. The project uses `accuracy` as the primary metric with the goal (`primary_metric_goal`) value `primary_metric_goal.MAXIMIZE` to maximize the primary metric in every run.
   1. Resources for controlling and running the experiment is specified using `max_concurrent_runs` (Maximum number of runs that can run concurrently in the experiment) and `max_total_runs` (Maximum number of training runs). 
 
